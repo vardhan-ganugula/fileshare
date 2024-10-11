@@ -2,5 +2,6 @@ backend/.env
 backend/node_modules
 backend/uploads/*
 frontend/node_modules
+frontend/dist
 frontend/.env
 *temp

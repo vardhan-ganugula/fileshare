@@ -1,6 +1,7 @@
-import React from "react";
+
 import { MdOutlineHorizontalRule } from "react-icons/md";
 import { UploadForm } from "./index";
+import { Link } from "react-router-dom";
 function HomepageMain() {
   return (
     <main className="h-full w-full px-15 flex py-3 md:items-center justify-center">
@@ -15,9 +16,9 @@ function HomepageMain() {
             <h4>Easy.Fast.Secure</h4>
           </div>
           <div className="mt-14">
-            <a href="http://vardhan.works" className="black_fluid-btn">
+            <Link to="https://vardhan-dev.in" className="black_fluid-btn">
               More Projects
-            </a>
+            </Link>
           </div>
           <div className="mt-5 text-zinc-400">
             <p>multimedia / documents supported</p>

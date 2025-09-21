@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import {UploadFile, DownloadFile} from './index'
 
 function UploadForm() {
@@ -17,9 +17,9 @@ function UploadForm() {
     }
   return (
     <div className='border w-[300px] h-auto mr-14 rounded-lg p-5'>
-        <div className="card_header" ref={btnRefs}>
-            <div className="btn upload active" onClick={handleNavigate}>Upload</div>
-            <div className="btn download" onClick={handleNavigate}>Download</div>
+        <div className="card_header" ref={btnRefs} onClick={handleNavigate}>
+            <div className="btn upload active" >Upload</div>
+            <div className="btn download" >Download</div>
         </div>
         <div>
             {isUpload ? <UploadFile/> : <DownloadFile/>}

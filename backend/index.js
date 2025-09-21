@@ -4,7 +4,7 @@ const dotenv = require('dotenv').config();
 const upload = require('./middlewares/middleware.multer')
 const mongoose = require('mongoose')
 const cors = require('cors')
-const {handleFileupload,handleFileCheck,handleHome} = require('./controllers/fileUpload')
+const {handleFileupload,handleFileCheck,handleHome, handleCheckCode} = require('./controllers/fileUpload')
 const handleDownloadFile = require('./controllers/fileDownload');
 const path = require('path');
 
@@ -14,9 +14,10 @@ app.use(express.urlencoded({extended : true}))
 mongoose.connect(process.env.MONGO_URI).then(res => console.log('connection success')).catch(er=> console.error(er))
 
 
-app.post('/upload_file', upload.single('file'), handleFileupload)
-app.get('/file_check', handleFileCheck)
-app.get('/download/:fileCode', handleDownloadFile)
+app.post('/api/upload_file', upload.single('file'), handleFileupload)
+app.get('/api/file_check', handleFileCheck)
+app.get('/api/download/:fileCode', handleDownloadFile)
+app.get('/api/check-code', handleCheckCode)
 
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../frontend/dist')))

@@ -1,4 +1,3 @@
-import React from "react";
 import { Header,HomepageMain } from "../components";
 function Homepage() {
   return (
